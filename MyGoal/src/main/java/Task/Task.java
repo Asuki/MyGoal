@@ -2,7 +2,6 @@ package Task;
 
 import java.sql.Time;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 
 public class Task {
 	/** The name of the task*/
@@ -27,6 +26,16 @@ public class Task {
 	/**It is true when the task is finished, otherwise it is false.*/
 	boolean isFinished;
 	
+
+	public Task(String taskName, LocalDate deadLine)
+	{
+		this.taskName = taskName;
+		this.deadLine = deadLine;
+		comment = "";
+		performed = 0;
+		ReCalc(0);
+	}
+	
 	public Task(String taskName, LocalDate deadLine, long target)
 	{
 		this.taskName = taskName;
@@ -43,6 +52,13 @@ public class Task {
 		remaningTime = java.time.temporal.ChronoUnit.DAYS.between(LocalDate.now(), deadLine);
 		dailyTarget = (target - performed)/remaningTime;
 		isFinished = (performed == target) ? true : false;
+	}
+	
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
+	}
+	public String getTaskName() {
+		return taskName;
 	}
 	//ToDo: Get + Set
 }

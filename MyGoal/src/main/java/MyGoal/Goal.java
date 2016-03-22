@@ -9,6 +9,9 @@ public class Goal {
 	
 	String goalName;
 	List<Task> tasks;
+	List<Task> dailyTasks;
+	List<Task> weeklyTasks;
+	List<Task> monthlyTasks;
 	
 	public Goal(String goalName)
 	{

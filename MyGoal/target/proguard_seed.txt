@@ -1,0 +1,2 @@
+MyGoal.Main
+MyGoal.Main: void main(java.lang.String[])
